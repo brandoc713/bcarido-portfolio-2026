@@ -9,17 +9,17 @@ const skillCategories = [
   {
     title: "Computer & Electrical Engineering",
     icon: <Cpu size={24} className="text-brand-rosewhite" />,
-    skills: ["Circuit Design", "Verilog/VHDL", "Microcontrollers", "IoT Systems", "Signal Processing", "C/C++"]
+    skills: ["C", "VHDL", "Microcontrollers", "FPGA Design", "Vivado", "MATLAB"]
   },
   {
     title: "Computer Science & Artificial Intelligence",
     icon: <Terminal size={24} className="text-brand-rosewhite" />,
-    skills: ["Python", "Machine Learning", "Neural Networks", "Data Structures", "Algorithms", "Computer Vision"]
+    skills: ["Python", "TensorFlow", "PyTorch", "Machine Learning", "SQL", "Jupyter Notebooks", "Git"]
   },
   {
     title: "Additional Knowledge",
     icon: <Layers size={24} className="text-brand-rosewhite" />,
-    skills: ["React/Next.js", "Tailwind CSS", "GSAP Animations", "UI/UX Prototyping", "WebGL/Three.js", "Agile Methodologies"]
+    skills: ["Solidworks CAD", "Microeconomics", "Data Analysis", "Model Evaluation", "Linux Machines"]
   }
 ];
 
