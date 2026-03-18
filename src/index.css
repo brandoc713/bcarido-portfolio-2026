@@ -6,13 +6,13 @@
   --color-brand-surface: #81d8d0;
   --color-brand-card: #141414;
   --color-brand-text: #fdf6ed;
-  --color-brand-gold: #F2D4D7;
+  --color-brand-rosewhite: #F2D4D7;
   /* rgba(255, 248, 239, 1) */
-  --color-brand-gold-glow: #F2D4D71a;
+  --color-brand-rosewhite-glow: #F2D4D71a;
   /* rgba(255, 248, 239, 0.1) */
-  --color-brand-gold-border: #F2D4D726;
+  --color-brand-rosewhite-border: #F2D4D726;
   /* rgba(255, 248, 239, 0.15) */
-  --color-brand-gold-card-border: #F2D4D733;
+  --color-brand-rosewhite-card-border: #F2D4D733;
   /* rgba(255, 248, 239, 0.2) */
 
   --font-heading: 'Outfit', sans-serif;
@@ -95,16 +95,16 @@
     background-color: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid var(--color-brand-gold-border);
+    border: 1px solid var(--color-brand-rosewhite-border);
   }
 
   .portfolio-card {
     background-color: var(--color-brand-card);
-    border: 1px solid var(--color-brand-gold-card-border);
-    box-shadow: -8px -8px 24px 0 var(--color-brand-gold-glow), 8px 8px 24px 0 rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-brand-rosewhite-card-border);
+    box-shadow: -8px -8px 24px 0 var(--color-brand-rosewhite-glow), 8px 8px 24px 0 rgba(0, 0, 0, 0.5);
   }
 
-  .gold-gradient-text {
-    color: var(--color-brand-gold);
+  .rosewhite-gradient-text {
+    color: var(--color-brand-rosewhite);
   }
 }

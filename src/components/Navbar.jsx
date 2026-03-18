@@ -25,7 +25,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex justify-between items-center">
         <a href="#" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-full bg-brand-gold flex items-center justify-center text-brand-bg font-bold">
+          <div className="w-8 h-8 rounded-full bg-brand-rosewhite flex items-center justify-center text-brand-bg font-bold">
             B
           </div>
           <span className="font-heading font-bold text-xl group-hover:scale-105 transition-transform duration-300">Brandon Carido</span>
@@ -37,14 +37,14 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="font-body text-brand-text/80 hover:text-brand-gold transition-colors duration-300"
+              className="font-body text-brand-text/80 hover:text-brand-rosewhite transition-colors duration-300"
             >
               {link.name}
             </a>
           ))}
           <a
             href="mailto:contact@example.com"
-            className="px-6 py-2 rounded-full border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-bg transition-colors duration-300 font-bold"
+            className="px-6 py-2 rounded-full border border-brand-rosewhite text-brand-rosewhite hover:bg-brand-rosewhite hover:text-brand-bg transition-colors duration-300 font-bold"
           >
             Contact
           </a>
@@ -66,7 +66,7 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-brand-text hover:text-brand-gold font-bold text-lg"
+              className="text-brand-text hover:text-brand-rosewhite font-bold text-lg"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
@@ -74,7 +74,7 @@ const Navbar = () => {
           ))}
           <a
             href="mailto:[EMAIL_ADDRESS]"
-            className="px-8 py-3 rounded-full border border-brand-gold text-brand-gold font-bold mt-2"
+            className="px-8 py-3 rounded-full border border-brand-rosewhite text-brand-rosewhite font-bold mt-2"
           >
             Contact
           </a>

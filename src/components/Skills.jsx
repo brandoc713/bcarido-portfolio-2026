@@ -8,17 +8,17 @@ gsap.registerPlugin(ScrollTrigger);
 const skillCategories = [
   {
     title: "Computer & Electrical Engineering",
-    icon: <Cpu size={24} className="text-brand-gold" />,
+    icon: <Cpu size={24} className="text-brand-rosewhite" />,
     skills: ["Circuit Design", "Verilog/VHDL", "Microcontrollers", "IoT Systems", "Signal Processing", "C/C++"]
   },
   {
     title: "Computer Science & Artificial Intelligence",
-    icon: <Terminal size={24} className="text-brand-gold" />,
+    icon: <Terminal size={24} className="text-brand-rosewhite" />,
     skills: ["Python", "Machine Learning", "Neural Networks", "Data Structures", "Algorithms", "Computer Vision"]
   },
   {
     title: "Additional Knowledge",
-    icon: <Layers size={24} className="text-brand-gold" />,
+    icon: <Layers size={24} className="text-brand-rosewhite" />,
     skills: ["React/Next.js", "Tailwind CSS", "GSAP Animations", "UI/UX Prototyping", "WebGL/Three.js", "Agile Methodologies"]
   }
 ];
@@ -67,8 +67,8 @@ const Skills = () => {
   return (
     <section id="skills" ref={sectionRef} className="py-24 pb-32">
       <div className="flex items-center gap-6 mb-16 skills-header">
-        <h3 className="text-brand-text whitespace-nowrap">Technical <span className="gold-gradient-text">Skills</span></h3>
-        <div className="h-[1px] w-full max-w-2xl bg-brand-gold-border"></div>
+        <h3 className="text-brand-text whitespace-nowrap">Technical <span className="rosewhite-gradient-text">Skills</span></h3>
+        <div className="h-[1px] w-full max-w-2xl bg-brand-rosewhite-border"></div>
       </div>
 
       <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl">
@@ -76,7 +76,7 @@ const Skills = () => {
           <div key={index} className="skill-card portfolio-card rounded-xl p-8 hover:-translate-y-2 transition-transform duration-500 h-full flex flex-col">
             
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-lg bg-brand-gold/10 flex items-center justify-center border border-brand-gold/20">
+              <div className="w-12 h-12 rounded-lg bg-brand-rosewhite/10 flex items-center justify-center border border-brand-rosewhite/20">
                 {category.icon}
               </div>
               <h4 className="text-xl text-brand-text">{category.title}</h4>
@@ -86,7 +86,7 @@ const Skills = () => {
               {category.skills.map((skill, i) => (
                 <span 
                   key={i} 
-                  className="px-4 py-2 rounded-lg bg-white/5 border border-white/5 font-stats text-sm text-brand-text/80 hover:bg-brand-gold hover:text-brand-bg hover:border-brand-gold transition-colors duration-300 shadow-sm"
+                  className="px-4 py-2 rounded-lg bg-white/5 border border-white/5 font-stats text-sm text-brand-text/80 hover:bg-brand-rosewhite hover:text-brand-bg hover:border-brand-rosewhite transition-colors duration-300 shadow-sm"
                 >
                   {skill}
                 </span>

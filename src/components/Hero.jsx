@@ -49,7 +49,7 @@ const Hero = () => {
 
       <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl z-10 mx-auto mt-[-10vh] gap-12">
         <div ref={textRef} className="max-w-2xl w-full">
-          <p className="font-stats text-brand-gold mb-2 tracking-wider uppercase text-sm md:text-base">
+          <p className="font-stats text-brand-rosewhite mb-2 tracking-wider uppercase text-sm md:text-base">
             Hi, my name is
           </p>
 
@@ -62,13 +62,19 @@ const Hero = () => {
           </h2>
 
           <p className="font-body text-brand-text/90 text-lg md:text-xl max-w-2xl mb-6">
-            I'm in my final year of electrical engineering while simultaneously pursuing a master's in computer engineering at Dartmouth's Thayer School of Engineering. I am passionate about technology, and I am always looking to learn new things.
+            I'm a final-year Master's student at Dartmouth's Thayer School of Engineering studying Computer Engineering with a focus on <span className="rosewhite-gradient-text font-bold">Edge AI and embedded systems</span>. I am passionate about learning where the intersection of hardware and software meets in the context of the ever expanding post-AI world.
           </p>
 
-          <div className="flex w-full justify-start mt-4 pl-4">
+          <div className="flex w-full justify-center mt-4 gap-4">
+            <a
+              href="#experience"
+              className="px-10 py-4 rounded-full border border-brand-rosewhite text-brand-rosewhite font-bold font-heading text-xl hover:scale-105 hover:bg-brand-rosewhite hover:text-brand-bg transition-all duration-300"
+            >
+              View Experiences
+            </a>
             <a
               href="#projects"
-              className="px-10 py-4 rounded-full bg-brand-gold text-brand-bg font-bold font-heading text-xl hover:scale-105 transition-transform duration-300"
+              className="px-10 py-4 rounded-full border border-brand-rosewhite text-brand-rosewhite font-bold font-heading text-xl hover:scale-105 hover:bg-brand-rosewhite hover:text-brand-bg transition-all duration-300"
             >
               View Projects
             </a>
@@ -80,7 +86,7 @@ const Hero = () => {
             ref={picRef}
             src="/images/websitePFP_Fixed.png"
             alt="Brandon Carido"
-            className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-brand-gold shadow-[0_0_30px_rgba(242,212,215,0.3)] transition-transform duration-500 hover:scale-105"
+            className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-brand-rosewhite shadow-[0_0_30px_rgba(242,212,215,0.3)] transition-transform duration-500 hover:scale-105"
           />
         </div>
       </div>
