@@ -14,7 +14,7 @@ function App() {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         
-        <main className="flex-grow pt-24 px-6 md:px-12 lg:px-24">
+        <main className="flex-grow pt-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto w-full">
           <Hero />
           <Experience />
           <Projects />

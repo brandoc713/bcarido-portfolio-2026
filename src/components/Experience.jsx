@@ -86,7 +86,7 @@ const Experience = () => {
   }, []);
 
   return (
-    <section id="experience" ref={sectionRef} className="py-24 max-w-4xl">
+    <section id="experience" ref={sectionRef} className="pt-6 md:pt-4 pb-24 max-w-4xl mx-auto w-full">
       <div className="flex items-center gap-6 mb-16 section-header">
         <h3 className="text-brand-text whitespace-nowrap">Professional <span className="rosewhite-gradient-text">Experience</span></h3>
         <div className="h-[1px] w-full bg-brand-rosewhite-border"></div>

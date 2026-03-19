@@ -57,13 +57,9 @@ const Hero = () => {
             Brandon Carido.
           </h1>
 
-          <h2 className="text-brand-text mb-4 leading-tight">
-            I build experiences.
-          </h2>
-
           <p className="font-body text-brand-text/90 text-lg md:text-xl max-w-2xl mb-6">
             I'm a final-year Master's student at Dartmouth's Thayer School of Engineering studying Computer Engineering with a focus on <span className="rosewhite-gradient-text font-bold">Edge AI and embedded systems</span>. I am passionate about learning where the intersection of hardware and software meets in the context of the ever expanding post-AI world.
-          </p>
+          </p> 
 
           <div className="flex w-full justify-center mt-4 gap-4">
             <a
@@ -86,9 +82,19 @@ const Hero = () => {
             ref={picRef}
             src="/images/websitePFP_Fixed.png"
             alt="Brandon Carido"
-            className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-brand-rosewhite shadow-[0_0_30px_rgba(242,212,215,0.3)] transition-transform duration-500 hover:scale-105"
+            className="w-52 h-52 md:w-64 md:h-64 object-cover rounded-full border-4 border-brand-rosewhite shadow-[0_0_30px_rgba(242,212,215,0.3)] transition-transform duration-500 hover:scale-105"
           />
         </div>
+      </div>
+
+      <div className="w-full z-10 mt-10 border-t border-brand-rosewhite/30">
+        <h2 className="w-full px-6 py-6 text-brand-text leading-tight font-body text-center">
+            <span>
+              "The tools for learning are abundant. It's the desire to learn that's scarce."
+              <br />
+              <span className="font-bold">- Naval Ravikant (Dartmouth '95)</span>
+            </span>
+        </h2>
       </div>
     </section>
   );

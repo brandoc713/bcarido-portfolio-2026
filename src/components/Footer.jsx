@@ -12,21 +12,21 @@ const Footer = () => {
             Always open to discussing new opportunities or collaborations.
           </p>
           <a 
-            href="mailto:contact@example.com" 
+            href="mailto:bcarido.th@dartmouth.edu" 
             className="flex items-center gap-2 text-brand-rosewhite hover:text-brand-accent transition-colors border-b border-transparent hover:border-brand-rosewhite pb-1 font-bold"
           >
-            <Mail size={18} /> contact@example.com
+            <Mail size={18} /> bcarido.th@dartmouth.edu
           </a>
         </div>
 
         <div className="flex gap-6">
-          <a href="#" className="w-12 h-12 rounded-full glass-panel flex flex-col items-center justify-center text-brand-text hover:text-brand-rosewhite hover:scale-110 transition-all duration-300">
+          <a href="https://linkedin.com/in/brandoncarido" className="w-12 h-12 rounded-full glass-panel flex flex-col items-center justify-center text-brand-text hover:text-brand-rosewhite hover:scale-110 transition-all duration-300">
             <Linkedin size={22} />
           </a>
-          <a href="#" className="w-12 h-12 rounded-full glass-panel flex flex-col items-center justify-center text-brand-text hover:text-brand-rosewhite hover:scale-110 transition-all duration-300">
+          <a href="https://github.com/brandoc713" className="w-12 h-12 rounded-full glass-panel flex flex-col items-center justify-center text-brand-text hover:text-brand-rosewhite hover:scale-110 transition-all duration-300">
             <Github size={22} />
           </a>
-          <a href="#" className="w-12 h-12 rounded-full glass-panel flex flex-col items-center justify-center text-brand-text hover:text-brand-rosewhite hover:scale-110 transition-all duration-300">
+          <a href="https://x.com/BDCodes_" className="w-12 h-12 rounded-full glass-panel flex flex-col items-center justify-center text-brand-text hover:text-brand-rosewhite hover:scale-110 transition-all duration-300">
             <Twitter size={22} />
           </a>
         </div>

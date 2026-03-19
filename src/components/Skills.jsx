@@ -71,7 +71,7 @@ const Skills = () => {
         <div className="h-[1px] w-full max-w-2xl bg-brand-rosewhite-border"></div>
       </div>
 
-      <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl">
+      <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto w-full">
         {skillCategories.map((category, index) => (
           <div key={index} className="skill-card portfolio-card rounded-xl p-8 hover:-translate-y-2 transition-transform duration-500 h-full flex flex-col">
             
