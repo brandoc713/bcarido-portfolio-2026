@@ -7,6 +7,7 @@
   --color-brand-card: #141414;
   --color-brand-text: #fdf6ed;
   --color-brand-rosewhite: #F2D4D7;
+  --color-branch-accent: #ddd8c4;
   /* rgba(255, 248, 239, 1) */
   --color-brand-rosewhite-glow: #F2D4D71a;
   /* rgba(255, 248, 239, 0.1) */
@@ -106,5 +107,421 @@
 
   .rosewhite-gradient-text {
     color: var(--color-brand-rosewhite);
+  }
+
+  .pcb-selector-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .pcb-board {
+    position: relative;
+    width: min(44rem, 100%);
+    height: 24rem;
+    border-radius: 1.2rem;
+    border: 2.5px solid color-mix(in srgb, var(--color-brand-text) 45%, transparent);
+    background:
+      linear-gradient(165deg, color-mix(in srgb, var(--color-brand-bg) 90%, #032614) 0%, color-mix(in srgb, var(--color-brand-bg) 78%, #00160b) 55%, color-mix(in srgb, var(--color-brand-bg) 92%, #052a18) 100%),
+      repeating-linear-gradient(100deg, color-mix(in srgb, var(--color-brand-surface) 5%, transparent) 0px, color-mix(in srgb, var(--color-brand-surface) 5%, transparent) 1px, transparent 1px, transparent 6px);
+    background-size: auto, auto, auto;
+    overflow: hidden;
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-brand-text) 22%, transparent), inset 0 -16px 24px rgba(0, 0, 0, 0.25), 0 20px 34px rgba(0, 0, 0, 0.3);
+  }
+
+  .pcb-board::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 18% 24%, color-mix(in srgb, var(--color-brand-text) 10%, transparent) 0 1.1px, transparent 1.2px),
+      radial-gradient(circle at 80% 64%, color-mix(in srgb, var(--color-brand-text) 9%, transparent) 0 1.1px, transparent 1.2px),
+      linear-gradient(28deg, transparent 44%, color-mix(in srgb, var(--color-brand-text) 8%, transparent) 44.5%, transparent 45%);
+    background-size: 48px 48px, 56px 56px, 64px 64px;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .pcb-board::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, color-mix(in srgb, var(--color-brand-text) 12%, transparent) 0%, transparent 24%, transparent 62%, color-mix(in srgb, var(--color-brand-text) 6%, transparent) 100%);
+    mix-blend-mode: screen;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .pcb-trace-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .pcb-trace-route {
+    opacity: 1;
+  }
+
+  .pcb-trace-path {
+    fill: none;
+    stroke: color-mix(in srgb, var(--color-brand-surface) 42%, #0f3f2b);
+    stroke-width: 1.1;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 220ms ease;
+    filter: drop-shadow(0 0 1.2px color-mix(in srgb, var(--color-brand-surface) 42%, transparent));
+  }
+
+  .pcb-trace-data {
+    fill: none;
+    stroke: color-mix(in srgb, var(--color-brand-text) 68%, transparent);
+    stroke-width: 0.42;
+    stroke-dasharray: 0.25 1.8;
+    stroke-linecap: round;
+    opacity: 0.45;
+    animation: pcbPacketFlow 4s linear infinite;
+  }
+
+  .pcb-trace-route.active .pcb-trace-path {
+    stroke: var(--color-brand-accent);
+    filter: drop-shadow(0 0 3.2px color-mix(in srgb, var(--color-brand-accent) 58%, transparent));
+  }
+
+  .pcb-trace-route.active .pcb-trace-data {
+    stroke: color-mix(in srgb, var(--color-brand-accent) 80%, white);
+    opacity: 0.95;
+    animation-duration: 2.6s;
+  }
+
+  .pcb-via {
+    fill: color-mix(in srgb, var(--color-brand-text) 62%, transparent);
+    opacity: 0.8;
+  }
+
+  .pcb-pad {
+    fill: color-mix(in srgb, var(--color-brand-surface) 68%, var(--color-brand-bg));
+    stroke: color-mix(in srgb, var(--color-brand-text) 38%, transparent);
+    stroke-width: 0.35;
+    transition: fill 220ms ease, filter 220ms ease;
+  }
+
+  .pcb-node {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.32rem;
+    min-width: 9.2rem;
+    min-height: 5.5rem;
+    padding: 0.7rem 0.8rem;
+    border-radius: 0.8rem;
+    border: 1px solid color-mix(in srgb, var(--color-brand-text) 24%, transparent);
+    background:
+      linear-gradient(150deg, color-mix(in srgb, var(--color-brand-card) 76%, #000) 0%, color-mix(in srgb, var(--color-brand-card) 92%, #151515) 56%, color-mix(in srgb, var(--color-brand-card) 84%, #020202) 100%),
+      repeating-linear-gradient(105deg, color-mix(in srgb, var(--color-brand-text) 3.5%, transparent) 0 1px, transparent 1px 5px);
+    color: var(--color-brand-text);
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-brand-text) 26%, transparent), inset 0 -8px 12px rgba(0, 0, 0, 0.28), 0 8px 18px rgba(0, 0, 0, 0.24);
+    transition: transform 180ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  }
+
+  .pcb-node:hover {
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-brand-text) 28%, transparent), inset 0 -8px 12px rgba(0, 0, 0, 0.26), 0 10px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .pcb-node.is-active {
+    border-color: color-mix(in srgb, var(--color-brand-surface) 70%, var(--color-brand-bg));
+    box-shadow:
+      inset 0 1px 0 color-mix(in srgb, var(--color-brand-text) 34%, transparent),
+      inset 0 -10px 14px rgba(0, 0, 0, 0.24),
+      0 0 0 2px color-mix(in srgb, var(--color-brand-surface) 26%, transparent),
+      0 0 0 7px color-mix(in srgb, var(--color-brand-surface) 10%, transparent),
+      0 0 24px color-mix(in srgb, var(--color-brand-surface) 34%, transparent);
+    animation: pcbBreathe 2.8s ease-in-out infinite;
+  }
+
+  .pcb-node-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 10.5rem;
+    min-height: 6rem;
+    z-index: 4;
+  }
+
+  .pcb-node-center:hover {
+    transform: translate(-50%, calc(-50% - 2px));
+  }
+
+  .pcb-node-center.is-active:hover {
+    transform: translate(-50%, calc(-50% - 2px));
+  }
+
+  .pcb-node-hardware-embedded {
+    top: 15.5%;
+    left: 19%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pcb-node-engineering-research {
+    top: 78%;
+    left: 19%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pcb-node-data-science-ai-analytics {
+    top: 15.5%;
+    left: 81%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pcb-node-product-strategy {
+    top: 78%;
+    left: 81%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pcb-label {
+    font-family: var(--font-stats);
+    font-size: 0.72rem;
+    letter-spacing: 0.015em;
+  }
+
+  .pcb-symbol {
+    width: 2.2rem;
+    height: 1.4rem;
+    stroke: var(--color-brand-text);
+    stroke-width: 1.45;
+    fill: none;
+    opacity: 0.95;
+  }
+
+  .pcb-pins {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: auto;
+    min-width: 32px;
+    height: 8px;
+    opacity: 0.88;
+    filter: drop-shadow(0 0 3px color-mix(in srgb, var(--color-brand-surface) 46%, transparent));
+  }
+
+  .pcb-pin-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--color-brand-text);
+    flex: 0 0 auto;
+  }
+
+  .pcb-pins-center {
+    min-width: 42px;
+  }
+
+  .pcb-summary {
+    width: min(44rem, 100%);
+    padding: 0.5rem 0.15rem 0;
+  }
+
+  @keyframes pcbPacketFlow {
+    from {
+      stroke-dashoffset: 0;
+    }
+    to {
+      stroke-dashoffset: -14;
+    }
+  }
+
+  @keyframes pcbBreathe {
+    0%,
+    100% {
+      box-shadow:
+        inset 0 1px 0 color-mix(in srgb, var(--color-brand-text) 34%, transparent),
+        inset 0 -10px 14px rgba(0, 0, 0, 0.24),
+        0 0 0 2px color-mix(in srgb, var(--color-brand-surface) 26%, transparent),
+        0 0 0 7px color-mix(in srgb, var(--color-brand-surface) 10%, transparent),
+        0 0 24px color-mix(in srgb, var(--color-brand-surface) 34%, transparent);
+    }
+    50% {
+      box-shadow:
+        inset 0 1px 0 color-mix(in srgb, var(--color-brand-text) 38%, transparent),
+        inset 0 -10px 14px rgba(0, 0, 0, 0.2),
+        0 0 0 2px color-mix(in srgb, var(--color-brand-surface) 34%, transparent),
+        0 0 0 9px color-mix(in srgb, var(--color-brand-surface) 14%, transparent),
+        0 0 30px color-mix(in srgb, var(--color-brand-surface) 44%, transparent);
+    }
+  }
+
+  .solar-selector-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .solar-selector {
+    position: relative;
+    width: min(34rem, 100%);
+    height: 23rem;
+    isolation: isolate;
+  }
+
+  .orbit {
+    position: absolute;
+    border: 2px solid color-mix(in srgb, var(--color-brand-surface) 82%, transparent);
+    border-radius: 999px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  .orbit-outer {
+    width: 92%;
+    height: 86%;
+  }
+
+  .orbit-inner {
+    width: 58%;
+    height: 54%;
+    opacity: 0.55;
+  }
+
+  .solar-node {
+    position: absolute;
+    z-index: 3;
+    border: 1px solid color-mix(in srgb, var(--color-brand-bg) 22%, transparent);
+    background: var(--color-brand-rosewhite);
+    color: color-mix(in srgb, var(--color-brand-bg) 80%, black);
+    border-radius: 999px;
+    min-width: 8.5rem;
+    padding: 0.42rem 0.8rem;
+    font-family: var(--font-stats);
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    text-align: center;
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease, background-color 200ms ease;
+  }
+
+  .solar-node:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+  }
+
+  .solar-node.is-active {
+    border-color: color-mix(in srgb, var(--color-brand-surface) 65%, var(--color-brand-bg));
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-brand-surface) 28%, transparent), 0 0 28px color-mix(in srgb, var(--color-brand-surface) 62%, transparent);
+  }
+
+  .node-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 9rem;
+    z-index: 4;
+  }
+
+  .node-planet-1 {
+    top: 16%;
+    left: 16%;
+  }
+
+  .node-planet-2 {
+    top: 16%;
+    right: 16%;
+  }
+
+  .node-planet-3 {
+    bottom: 15%;
+    right: 14%;
+  }
+
+  .node-planet-4 {
+    bottom: 15%;
+    left: 14%;
+  }
+
+  .node-center:hover {
+    transform: translate(-50%, calc(-50% - 2px));
+  }
+
+  .node-center.is-active:hover {
+    transform: translate(-50%, calc(-50% - 2px));
+  }
+
+  @media (max-width: 768px) {
+    .pcb-board {
+      height: 28rem;
+    }
+
+    .pcb-node {
+      min-width: 8.2rem;
+      min-height: 5rem;
+      padding: 0.6rem 0.65rem;
+    }
+
+    .pcb-node-center {
+      min-width: 9.2rem;
+      min-height: 5.2rem;
+    }
+
+    .pcb-node-hardware-embedded {
+      top: 15.5%;
+      left: 20%;
+    }
+
+    .pcb-node-data-science-ai-analytics {
+      top: 15.5%;
+      left: 80%;
+    }
+
+    .pcb-node-engineering-research {
+      top: 78%;
+      left: 20%;
+    }
+
+    .pcb-node-product-strategy {
+      top: 78%;
+      left: 80%;
+    }
+
+    .solar-selector {
+      width: min(28rem, 100%);
+      height: 21rem;
+    }
+
+    .solar-node {
+      font-size: 0.66rem;
+      min-width: 7rem;
+      padding: 0.36rem 0.65rem;
+      max-width: 8rem;
+      text-wrap: balance;
+    }
+
+    .node-planet-1 {
+      left: 3%;
+      top: 18%;
+    }
+
+    .node-planet-2 {
+      right: 3%;
+      top: 18%;
+    }
+
+    .node-planet-3 {
+      right: 3%;
+      bottom: 14%;
+    }
+
+    .node-planet-4 {
+      left: 3%;
+      bottom: 14%;
+    }
   }
 }
