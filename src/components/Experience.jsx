@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const experiences = [
   {
+    group: "education",
     title: "Teaching Assistant",
     company: "Dartmouth College",
     period: "September 2025 - March 2026",
@@ -14,6 +15,7 @@ const experiences = [
     logoScale: 0.72, // Numeric scale: 1 = default, 0.8 = smaller, 1.5 = bigger
   },
   {
+    group: "product",
     title: "Product Engineering Intern",
     company: "YourEDU",
     period: "June 2025 - September 2025",
@@ -86,7 +88,7 @@ const Experience = () => {
   }, []);
 
   return (
-    <section id="experience" ref={sectionRef} className="pt-6 md:pt-4 pb-24 max-w-4xl mx-auto w-full">
+    <section id="experience" ref={sectionRef} className="scroll-mt-[88px] md:scroll-mt-[104px] pt-6 md:pt-4 pb-24 max-w-4xl mx-auto w-full">
       <div className="flex items-center gap-6 mb-16 section-header">
         <h3 className="text-brand-text whitespace-nowrap">Professional <span className="rosewhite-gradient-text">Experience</span></h3>
         <div className="h-[1px] w-full bg-brand-rosewhite-border"></div>

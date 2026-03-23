@@ -24,7 +24,7 @@ const Navbar = () => {
       className={`fixed w-full z-40 transition-all duration-300 ${isScrolled ? 'glass-panel py-3' : 'bg-transparent py-5'}`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-2 group">
+        <a href="#home" className="flex items-center gap-2 group">
           <div className="w-8 h-8 rounded-full bg-brand-rosewhite flex items-center justify-center text-brand-bg font-bold">
             <Origami size={18} aria-hidden="true" />
           </div>

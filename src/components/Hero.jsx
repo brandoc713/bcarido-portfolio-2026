@@ -42,12 +42,12 @@ const Hero = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative min-h-[70vh] flex flex-col justify-center items-start overflow-hidden pt-10">
+    <section id="home" ref={containerRef} className="relative min-h-[70vh] scroll-mt-[88px] md:scroll-mt-[104px] flex flex-col justify-center items-start overflow-hidden pt-10">
       {/* <div ref={bkgdRef} className="absolute inset-0 z-0">
         <LogoBackgroundAnimation />
       </div> */}
 
-      <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl z-10 mx-auto mt-[-10vh] gap-12">
+      <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl z-10 mx-auto mt-0 gap-12">
         <div ref={textRef} className="max-w-2xl w-full">
           <p className="font-stats text-brand-rosewhite mb-2 tracking-wider uppercase text-sm md:text-base">
             Hi, my name is
