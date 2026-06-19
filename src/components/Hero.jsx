@@ -58,7 +58,7 @@ const Hero = () => {
           </h1>
 
           <p className="font-body text-brand-text/90 text-lg md:text-xl max-w-2xl mb-6">
-            Computer Engineer specializing in <span className="rosewhite-gradient-text font-bold">edge AI and embedded systems</span>. I take machine-learning models from Python training all the way down to FPGA silicon and the firmware that drives them. I recently earned my MEng in Computer Engineering at Dartmouth's Thayer School of Engineering, backed by a dual foundation in electrical engineering and computer science.
+            Computer Engineer specializing in <span className="rosewhite-gradient-text font-bold">edge AI and embedded systems</span>. I take machine-learning models from Python training all the way down to FPGA silicon and the firmware that drives them. I recently earned my MEng in Computer Engineering at Dartmouth's Thayer School of Engineering, backed by a dual-degree Bachelor's foundation in electrical engineering and computer science.
           </p> 
 
           <div className="flex w-full justify-center mt-4 gap-4">
