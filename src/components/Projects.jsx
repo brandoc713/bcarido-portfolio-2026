@@ -95,9 +95,9 @@ const projects = [
 const projectGroups = [
   {
     id: "current-highlights",
-    label: "Current Projects and Highlights",
+    label: "Featured Work",
     position: "center",
-    summary: "Primary active workstream featuring the Zybo edge-vision pipeline and motion classifier.",
+    summary: "Real-Time Systems on Bare Hardware — machine learning, signal processing, and live video, engineered onto FPGAs and microcontrollers.",
     diagram: "cpu"
   },
   {
