@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Origami, Cpu, TreePine } from 'lucide-react';
+import { Menu, X, Origami, Cpu, TreePine, Radar } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex justify-between items-center">
         <a href="#home" className="flex items-center gap-2 group">
           <div className="w-8 h-8 rounded-full bg-brand-rosewhite flex items-center justify-center text-brand-bg font-bold">
-            <TreePine size={23} aria-hidden="true" />
+            <Radar size={23} aria-hidden="true" />
           </div>
           <span className="font-heading font-bold text-xl group-hover:scale-105 transition-transform duration-300">Brandon Carido</span>
         </a>
