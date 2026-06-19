@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Origami } from 'lucide-react';
+import { Menu, X, Origami, Cpu, TreePine } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex justify-between items-center">
         <a href="#home" className="flex items-center gap-2 group">
           <div className="w-8 h-8 rounded-full bg-brand-rosewhite flex items-center justify-center text-brand-bg font-bold">
-            <Origami size={18} aria-hidden="true" />
+            <TreePine size={23} aria-hidden="true" />
           </div>
           <span className="font-heading font-bold text-xl group-hover:scale-105 transition-transform duration-300">Brandon Carido</span>
         </a>
@@ -43,7 +43,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="mailto:bcarido.th@dartmouth.edu"
+            href="mailto:brandon.carido@proton.me"
             className="px-6 py-2 rounded-full border border-brand-rosewhite text-brand-rosewhite hover:bg-brand-rosewhite hover:text-brand-bg transition-colors duration-300 font-bold"
           >
             Contact
@@ -73,7 +73,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="mailto:[EMAIL_ADDRESS]"
+            href="mailto:brandon.carido@proton.me"
             className="px-8 py-3 rounded-full border border-brand-rosewhite text-brand-rosewhite font-bold mt-2"
           >
             Contact

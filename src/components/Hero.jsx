@@ -58,7 +58,7 @@ const Hero = () => {
           </h1>
 
           <p className="font-body text-brand-text/90 text-lg md:text-xl max-w-2xl mb-6">
-            I'm a final-year Master's student at Dartmouth's Thayer School of Engineering studying Computer Engineering with a focus on <span className="rosewhite-gradient-text font-bold">Edge AI and embedded systems</span>. I am passionate about learning where the intersection of hardware and software meets in the context of the ever expanding post-AI world.
+            Computer Engineer specializing in <span className="rosewhite-gradient-text font-bold">edge AI and embedded systems</span>. I take machine-learning models from Python training all the way down to FPGA silicon and the firmware that drives them. I recently earned my MEng in Computer Engineering at Dartmouth's Thayer School of Engineering, backed by a dual foundation in electrical engineering and computer science.
           </p> 
 
           <div className="flex w-full justify-center mt-4 gap-4">
@@ -80,7 +80,7 @@ const Hero = () => {
         <div className="flex-shrink-0 relative pr-4 md:pr-12 lg:pr-20">
           <img
             ref={picRef}
-            src="/images/websitePFP_Fixed.png"
+            src="/images/Headshot2026.png"
             alt="Brandon Carido"
             className="w-52 h-52 md:w-64 md:h-64 object-cover rounded-full border-4 border-brand-rosewhite shadow-[0_0_30px_rgba(242,212,215,0.3)] transition-transform duration-500 hover:scale-105"
           />

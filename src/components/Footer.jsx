@@ -12,10 +12,10 @@ const Footer = () => {
             Always open to discussing new opportunities or collaborations.
           </p>
           <a 
-            href="mailto:bcarido.th@dartmouth.edu" 
+            href="mailto:brandon.carido@proton.me" 
             className="flex items-center gap-2 text-brand-rosewhite hover:text-brand-accent transition-colors border-b border-transparent hover:border-brand-rosewhite pb-1 font-bold"
           >
-            <Mail size={18} /> bcarido.th@dartmouth.edu
+            <Mail size={18} /> brandon.carido@proton.me
           </a>
         </div>
 

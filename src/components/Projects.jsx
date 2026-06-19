@@ -9,10 +9,32 @@ const projects = [
   {
     title: "Edge AI Vision Pipeline on a Zybo Z7-20",
     className: "Edge AI Architectures",
-    description: "The project is currently being developed and is not yet completed as it is part of a senior independent study course. The project will implements a complete on-device inference system that runs a compact convolutional neural network directly on a Xilinx Zynq-7000 (Zybo Z7-20) development board paired with a Pcam camera module. Guided by the course's emphasis on hardware-software co-design, a state-of-the-art model is compressed so that it fits within the board's 256 KB of BRAM and 1 GB of external DDR while meeting a strict 5 mW power envelope. Throughout the work, model-compression techniques are applied, specialized neural-processor mappings are evaluated, and an end-to-end Edge-AI deployment workflow is followed—from dataset curation and training on a workstation, through cross-compilation, to on-board validation. The system demonstrates how constraints on memory, compute, and energy shape both model architecture and system design, providing a reproducible reference for TinyML applications on resource-constrained FPGA-CPU platforms.",
-    techStack: ["Xilinx Zynq-7000", "Zybo Z7-20", "Pcam Camera Module", "FPGA Design", "Vivado", "MATLAB"],
-    image: "/images/Projects/engs192Project_Generated.png",
+    description: "Edge-AI demands neural networks that run on tiny, power-constrained hardware rather than in the cloud, and this project proves out that full path from a trained model to custom silicon. I trained a convolutional neural network in Python to detect edges in camera images, converted it into FPGA hardware using hls4ml and Vitis HLS, integrated it into a Xilinx Zynq-7020 system, and ran live inference on a Zybo Z7-20 board with a real camera feeding an HDMI display. The accelerator uses 8-bit fixed-point arithmetic and produces an edge map in roughly 5 ms, while the onboard ARM processor handles image preprocessing and accelerator control via bare-metal firmware. The emphasis was on owning the complete hardware/software workflow end to end (Python training, hardware synthesis, IP integration, and embedded firmware) rather than chasing raw accuracy, demonstrating how a machine-learning model can be deployed all the way onto a low-cost embedded device. Full report and source code linked below.",
+    techStack: ["Python", "TensorFlow/Keras", "hls4ml", "Vitis HLS", "Vivado", "C", "ARM Cortex-A9", "AXI/VDMA", "8-bit Fixed-Point", "Zybo Z7-20"],
+    githubUrl: "https://github.com/brandoc713/engs192-edgeAI-visionPipeline",
+    livePDF: "/Reports/engg192_FinalReport.pdf",
+    image: "/images/Projects/engs192_system.PNG",
+    groups: ["current-highlights", "hardware-embedded", "engineering-research", "data-science-ai-analytics"]
+  },
+  {
+    title: "Fixed-Point OMP for ECG Compressed Sensing: a precision-resource study on the Zynq-7020",
+    className: "Compressed Sensing & Signal Recovery",
+    description: "Wearable ECG sensors need to capture and transmit as little data as possible to conserve battery life and bandwidth during continuous monitoring, but that compressed data still has to be accurately reconstructed, often right on the device. I built a hardware accelerator that performs this reconstruction (Orthogonal Matching Pursuit) on a Xilinx Zynq-7020, partitioning the work so the heavy, parallel math runs in custom FPGA logic while the lighter sequential steps run on the ARM processor. Testing on real clinical heart-rhythm data (MIT-BIH), I swept the arithmetic precision to map the tradeoff between accuracy and chip resources and found that 11-bit precision is the sweet spot: it matches full-precision accuracy while letting the multipliers use the chip's dedicated math units instead of consuming general-purpose logic. Against an optimized software version running on the same processor, the hardware engine reached an estimated ~18x speedup on the most demanding step. Full report and source code linked below.",
+    techStack: ["Python", "Vitis HLS", "Vivado", "Xilinx Zynq-7020", "ARM Cortex-A9", "Orthogonal Matching Pursuit"],
+    githubUrl: "https://github.com/therealMichaelD/engs109-omp-fpga",
+    livePDF: "/Reports/engs109_Poster.pdf",
+    image: "/images/Projects/engs109_presentation.jpeg",
     groups: ["current-highlights", "hardware-embedded", "engineering-research"]
+  },
+  {
+    title: "Audio-Reactive HDMI Video Effects on a Zybo Z7-20",
+    className: "Advanced Digital System Design",
+    description: "This is a real-time FPGA system that makes live video react to sound. Audio from the codec is captured as left and right channels, streamed through hardware as AXI-Stream data, and analyzed with an FFT to measure energy across different frequency bands. That frequency information feeds a custom video filter that adjusts the red, green, and blue channels of the image on the fly, so as the audio grows louder or shifts in pitch, the colors and brightness of the HDMI output respond instantly. The system lets you select the video source (live HDMI passthrough, color bars, or a gradient), toggle individual color effects on and off, and switch which audio channel drives the visuals. Everything is wired together directly in hardware: the FFT output bins connect straight into the video filter, so sound energy continuously reshapes the displayed image. It is a compact demonstration of real-time audio and video signal processing running together on a single FPGA. Full report and source code linked below.",
+    techStack: ["VHDL", "Vivado", "AXI-Stream", "FFT", "Audio Codec", "HDMI", "Xilinx Zynq", "Hardware Video Filter"],
+    githubUrl: "https://github.com/khaidarkairbek/engs128-final-project",
+    livePDF: "/Reports/engs128_FinalReport.pdf",
+    image: "/images/Projects/engs128_image.png",
+    groups: ["current-highlights", "hardware-embedded"]
   },
   {
     title: "Human Motion Classifier with a Convolutional Neural Network",
@@ -29,7 +51,7 @@ const projects = [
     description: "This project developed a fixed wing uncrewed aerial vehicle (UAV) demonstrator to show how polymer selective laser sintering (SLS) can enable enhanced UAV designs and reduce supply chain delays for critical parts. The airframe was divided into standardized modules with repeatable mechanical and electrical interfaces, enabling rapid assembly and targeted replacement of damaged sections instead of requiring depot level repairs. The modular approach supported rapid reconfiguration and spare on demand manufacturing from controlled digital part files, shifting logistics from shipping physical spares to producing parts near the point of use.",
     techStack: ["Solidworks", "Supply Chain Agile", "Stakeholder-Focused", "Interdisciplinary Systems Engineering"],
     image: "/images/Projects/projectEOSMav.png",
-    groups: ["current-highlights", "product-strategy"]
+    groups: ["product-strategy"]
   },
   {
     title: "Cross-Modal Face Retrieval: Matching Hand-Drawn Sketches to Photographs via Metric Learning",
